@@ -19,8 +19,8 @@ public class Questions {
     private String q1;
     private String q2;
 
-    @ManyToMany
-    @JoinTable(
+    @ManyToMany             // don't use mappedBy in the owning side
+    @JoinTable(                 // JoinTable is used in the owning side
     name = "question_answer",
     joinColumns = @JoinColumn(name = "question_id")
     , inverseJoinColumns = @JoinColumn(name = "answer_id"))
@@ -33,8 +33,6 @@ public class Questions {
     public void setAnswers(List<Answers> answers) {
         this.answers = answers;
     }
-
-
 
     public int getQuestionId() {
         return questionId;

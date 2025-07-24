@@ -16,9 +16,11 @@ public class Answers {
     private int answerId;
     private String answer;
 
-    @ManyToMany(mappedBy = "answers")
-    
+    @ManyToMany(mappedBy = "answers")         // mapped by Only in the inverse side
     private List<Questions> questions;
+
+
+
     public List<Questions> getQuestions() {
         return questions;
     }
